@@ -26,8 +26,19 @@ sigma = zeros(1, size(X, 2));
 % Hint: You might find the 'mean' and 'std' functions useful.
 %       
 
-
-
+mu = mean(X_norm);
+sigma = std(X_norm);
+X_normmu = X_norm - mu;
+%fprintf('Normalizedmu X = %f\n', X_normmu(1:10,:));
+X_normstd = X_normmu ./ sigma;
+%fprintf('Normalized X = %f\n', X_normstd(1:10,:));
+%X_norm3 = X_normmu(:,1)/sigma(:,1);
+%X_norm4 = X_normmu(:,2)/sigma(:,2);
+%X_norm(:,1) = X_norm3;
+%X_norm(:,2) = X_norm4;
+%fprintf('Normalized X1 = %f\n', X_norm(1:10,1));
+%fprintf('Normalized X2 = %f\n', X_norm(1:10,2));
+X_norm = X_normstd;
 
 
 

@@ -16,8 +16,13 @@ for iter = 1:num_iters
     % Hint: While debugging, it can be useful to print out the values
     %       of the cost function (computeCostMulti) and gradient here.
     %
-
-
+    count = size(X,2);
+	for feat = 1:count
+        theta0 = theta(1,1) - alpha * ((sum(X*theta - y))/m);
+        theta1 = theta(2,1) - alpha * (sum((X*theta - y).*X(:,2)))/m;
+        theta3 = theta(3,1) - alpha * (sum((X*theta - y).*X(:,3)))/m;
+        theta = [theta0;theta1;theta3];
+    end
 
 
 

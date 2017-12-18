@@ -50,6 +50,8 @@ pause;
 fprintf('Normalizing Features ...\n');
 
 [X mu sigma] = featureNormalize(X);
+fprintf('Median mu = %f\n', mu);
+fprintf('STD sigma = %f\n', sigma);
 
 % Add intercept term to X
 X = [ones(m, 1) X];
@@ -106,7 +108,8 @@ fprintf('\n');
 % not need to be normalized.
 price = 0; % You should change this
 
-
+% Predict values for population sizes of 35,000 and 70,000
+price = [1, 1650,3] *theta;
 % ============================================================
 
 fprintf(['Predicted price of a 1650 sq-ft, 3 br house ' ...
